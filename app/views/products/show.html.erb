@@ -3,7 +3,11 @@
       <div class="col-sm-8 col-sm-offset-2">
         <div class="product_single">
             <h2><%= @product.name %></h2>
-            <h4 class="<%= @product.sale_message_class_name %>"><%= @product.sale_message %></h4>
+            <% if @product.discounted? %>
+              <h4 class="discount-item">Discount item!</h4>
+            <% else %>
+              <h4>Everyday value!</h4>
+            <% end %>
             <p>Price: <%= number_to_currency(@product.price) %></p>
             <p>Tax: <%= number_to_currency(@product.tax) %></p>
             <p>Total: <%= number_to_currency(@product.total) %></p>
