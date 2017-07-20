@@ -46,7 +46,6 @@ class ProductsController < ApplicationController
     @product.update(
       name: params[:name],
       description: params[:description],
-      image: params[:image],
       price: params[:price]
     )
     flash[:success] = "Product Updated"
