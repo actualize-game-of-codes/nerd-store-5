@@ -1,5 +1,12 @@
 class ProductsController < ApplicationController
   def index
+    if session[:count] == nil
+      session[:count] = 0
+    else
+      session[:count] += 1
+    end
+    @visit_count = session[:count]
+
     sort_attribute = params[:input_sort_attribute]
     sort_order = params[:input_sort_order]
     discounted = params[:input_only_discounted]
