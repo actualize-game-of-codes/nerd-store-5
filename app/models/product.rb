@@ -1,5 +1,6 @@
 class Product < ActiveRecord::Base
   has_many :images
+  has_many :orders
   belongs_to :supplier
   # def supplier
   #   return Supplier.find_by(id: supplier_id)
