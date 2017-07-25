@@ -21,22 +21,10 @@
 
             <%= form_tag "/orders", method: "post" do %>
               <div>
-                User id: <input type="text" name="form_user_id">
-              </div>
-              <div>
                 Product id: <input type="text" name="form_product_id">
               </div>
               <div>
                 Quantity: <input type="text" name="form_quantity">
-              </div>
-              <div>
-                Subtotal: <input type="text" name="form_subtotal">
-              </div>
-              <div>
-                Tax: <input type="text" name="form_tax">
-              </div>
-              <div>
-                Total: <input type="text" name="form_total">
               </div>
               <input type="submit" value="Buy now!">
             <% end %>
