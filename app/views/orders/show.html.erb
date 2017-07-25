@@ -1,7 +1,9 @@
 <h1>Order info</h1>
-<p>User id: <%= @order.user_id %></p>
-<p>Product id: <%= @order.product_id %></p>
-<p>quantity id: <%= @order.quantity %></p>
-<p>subtotal id: <%= @order.subtotal %></p>
-<p>tax id: <%= @order.tax %></p>
-<p>total id: <%= @order.total %></p>
+<p>Email: <%= @order.user.email %></p>
+<p>Product name: <%= @order.product.name %></p>
+<img src="<%= @order.product.images.first.url %>" alt="">
+<p>quantity: <%= @order.quantity %></p>
+
+<p>subtotal: <%= @order.subtotal %></p>
+<p>tax: <%= @order.tax %></p>
+<p>total: <%= @order.total %></p>
