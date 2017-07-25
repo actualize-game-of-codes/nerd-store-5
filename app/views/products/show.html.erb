@@ -18,6 +18,29 @@
             <% end %>
 
             <p>Description: <%= @product.description %></p>
+
+            <%= form_tag "/orders", method: "post" do %>
+              <div>
+                User id: <input type="text" name="form_user_id">
+              </div>
+              <div>
+                Product id: <input type="text" name="form_product_id">
+              </div>
+              <div>
+                Quantity: <input type="text" name="form_quantity">
+              </div>
+              <div>
+                Subtotal: <input type="text" name="form_subtotal">
+              </div>
+              <div>
+                Tax: <input type="text" name="form_tax">
+              </div>
+              <div>
+                Total: <input type="text" name="form_total">
+              </div>
+              <input type="submit" value="Buy now!">
+            <% end %>
+
             <%= link_to "Edit", "/products/#{@product.id}/edit", class: "btn btn-success" %>
             <%= link_to "Delete", "/products/#{@product.id}", {method: :delete, class: "btn btn-danger" }%>
         </div>
