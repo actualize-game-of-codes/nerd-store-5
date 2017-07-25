@@ -20,12 +20,8 @@
             <p>Description: <%= @product.description %></p>
 
             <%= form_tag "/orders", method: "post" do %>
-              <div>
-                Product id: <input type="text" name="form_product_id">
-              </div>
-              <div>
-                Quantity: <input type="text" name="form_quantity">
-              </div>
+              <input type="hidden" name="form_product_id" value="<%= @product.id %>">
+              Quantity: <input type="text" name="form_quantity">
               <input type="submit" value="Buy now!">
             <% end %>
 
