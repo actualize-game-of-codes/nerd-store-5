@@ -20,6 +20,13 @@ class ProductsController < ApplicationController
     if sort_attribute && sort_order
       @products = @products.order(sort_attribute => sort_order)
     end
+
+    category_name = params[:category]
+    if category_name
+      category = Category.find_by(name: category_name)
+      @products = category.products
+    end
+
     render "index.html.erb"
   end
 

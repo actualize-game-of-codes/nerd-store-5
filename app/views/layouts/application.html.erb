@@ -40,7 +40,11 @@
             <li><a href="#">Link</a></li>
             <li><a href="#">Link</a></li>
             <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
+
+            <% Category.all.each do |category| %>
+              <li><a href="/products?category=<%= category.name %>">Only show <%= category.name %></a></li>
+            <% end %>
+            
           </ul>
         </li>
       </ul>
