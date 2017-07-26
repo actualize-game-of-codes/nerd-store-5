@@ -3,6 +3,12 @@
       <div class="col-sm-8 col-sm-offset-2">
         <div class="product_single">
             <h2><%= @product.name %></h2>
+            <p>Categories</p>
+            <ul>
+            <% @product.categories.each do |category| %>
+              <li><a href="/products?category=<%= category.name %>"><%= category.name %></a></li>
+            <% end %>
+            </ul>
             <p>Made by <%= @product.supplier.name %> (whose email address is <%= @product.supplier.email %>)</p>
             <% if @product.discounted? %>
               <h4 class="discount-item">Discount item!</h4>
