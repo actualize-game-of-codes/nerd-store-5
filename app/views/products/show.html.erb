@@ -25,10 +25,10 @@
 
             <p>Description: <%= @product.description %></p>
 
-            <%= form_tag "/orders", method: "post" do %>
+            <%= form_tag "/carted_products", method: "post" do %>
               <input type="hidden" name="form_product_id" value="<%= @product.id %>">
               Quantity: <input type="text" name="form_quantity">
-              <input type="submit" value="Buy now!">
+              <input type="submit" value="Add to cart!">
             <% end %>
 
             <%= link_to "Edit", "/products/#{@product.id}/edit", class: "btn btn-success" %>
