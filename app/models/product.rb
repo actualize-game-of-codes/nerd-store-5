@@ -1,4 +1,9 @@
 class Product < ActiveRecord::Base
+  # name exists, price exists, price number,
+  validates :name, presence: true
+  validates :name, uniqueness: true
+  validates :price, presence: true 
+
   has_many :category_products
   has_many :categories, through: :category_products
   has_many :images

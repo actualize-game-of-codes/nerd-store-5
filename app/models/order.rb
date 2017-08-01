@@ -1,4 +1,6 @@
 class Order < ApplicationRecord
+  # subtotal/tax/total should be numbers
+
   belongs_to :user
   has_many :carted_products
   has_many :products, through: :carted_products
